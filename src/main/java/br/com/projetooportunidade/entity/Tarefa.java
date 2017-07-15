@@ -1,15 +1,21 @@
 package br.com.projetooportunidade.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
-@Table(name="TUsuario")
-public class Tarefa {
+@Table(name="tarefa")
+public class Tarefa implements Serializable {
 
+	@Transient
+	private static final long serialVersionUID = 6708794541850235518L;
+	
 	@Id
 	@GeneratedValue
 	private long id;
