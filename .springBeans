@@ -7,7 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>java:br.com.projetooportunidade.util.Application</config>
+		<config>java:br.com.projetooportunidade.Application</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
