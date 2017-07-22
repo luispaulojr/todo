@@ -35,6 +35,10 @@ public class Tarefa implements Serializable {
 	
 	private Status status;
 
+	public Tarefa() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public long getId() {
 		return id;
 	}

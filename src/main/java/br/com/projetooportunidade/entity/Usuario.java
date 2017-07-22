@@ -32,6 +32,10 @@ public class Usuario implements Serializable {
 	@OneToMany(mappedBy = "usuarioTarefa", targetEntity = Tarefa.class, fetch = FetchType.LAZY)
 	private Set<Tarefa> tarefas;
 
+	 public Usuario() {
+		// TODO Auto-generated constructor stub
+	}
+	 
 	public long getId() {
 		return id;
 	}
