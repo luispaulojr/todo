@@ -1,11 +1,14 @@
 package br.com.projetooportunidade.entity;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -25,6 +28,9 @@ public class Usuario implements Serializable {
 	private String login;
 	@Column(nullable = false)
 	private String senha;
+	
+	@OneToMany(mappedBy = "usuarioTarefa", targetEntity = Tarefa.class, fetch = FetchType.LAZY)
+	private Set<Tarefa> tarefas;
 
 	public long getId() {
 		return id;
@@ -56,6 +62,13 @@ public class Usuario implements Serializable {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	public Set<Tarefa> getTarefas() {
+		return tarefas;
+	}
+
+	public void setTarefas(Set<Tarefa> tarefas) {
+		this.tarefas = tarefas;
 	}
 
 	@Override
